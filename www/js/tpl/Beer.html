@@ -1,0 +1,34 @@
+<div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item left quarter">
+        <a class="topcoat-icon-button--quiet back-button" href="#">
+          <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+        <h1 class="topcoat-navigation-bar__title">Beer Pursuit</h1>
+    </div>
+</div>
+
+<div class='details'>
+    <img class='employee-image' src='img/beer.png'/>
+
+    <h1><%= name %></h1>
+    <p><%= description %></p>
+
+    <div class="topcoat-list__container scroller">
+        <ul class="topcoat-list list actions">
+            <li class="topcoat-list__item">
+                <p>Degrés</p><p><%= degree %>°</p>
+                <div class="action-icon icon-sms"></div>
+            </li>
+            <li class="topcoat-list__item">
+                <a href="#manufacturers/<%= manufacturer.id %>">
+                    <p>Brasserie</p><p><%= manufacturer.name %> (<%= manufacturer.city %>)</p>
+                    <div class="action-icon icon-manager"/>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+        

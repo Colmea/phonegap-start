@@ -1,0 +1,11 @@
+<ul class="topcoat-list list">
+<% _.each(beers, function(beer) { %>
+    <li class="topcoat-list__item">
+        <a href="#beers/<%= beer.id %>">
+            <p><%= beer.name %></p>
+            <p><%= beer.degree %>°</p>
+            <span class="chevron"></span><span class="count">2</span>
+        </a>
+    </li>
+<% }); %>
+</ul>
