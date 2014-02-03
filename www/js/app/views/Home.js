@@ -32,9 +32,12 @@ define(function (require) {
         },
 
         search: function (event) {
-            console.log('search');
             var key = $('.search-key').val();
-            this.beerList.fetch({reset: true, success : function(data){ console.log('yo'); }, data: {name: key}});
+
+            // fetch only if at least 1 char
+            if (key.length >= 1) {          
+                this.beerList.fetch({reset: true, data: {name: key}});
+            }
         },
 
         onkeypress: function (event) {
