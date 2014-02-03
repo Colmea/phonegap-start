@@ -11,7 +11,6 @@
 
 <div class='details'>
     <h1><%= name %></h1>
-    <p><%= description %></p>
 
     <div class="topcoat-list__container scroller">
         <ul class="topcoat-list list actions">
@@ -23,6 +22,12 @@
                 <p>Adresse</p><p><%= adress %></p>
                 <div class="action-icon icon-home"></div>
             </li>
+            <a href="http://<%= website %>">
+                <li class="topcoat-list__item">
+                    <p>Site web</p><p><%= website %></p>
+                    <div class="action-icon icon-url"></div>
+                </li>
+            </a>
             
         </ul>
     </div>

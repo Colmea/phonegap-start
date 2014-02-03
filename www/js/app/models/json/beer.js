@@ -7,7 +7,7 @@ define(function (require) {
 
         Beer = Backbone.Model.extend({
 
-            urlRoot: "http://localhost/beer/web/app_dev.php/api/beers",
+            urlRoot: "http://vps46538.ovh.net/web/app.php/api/beers",
 
             initialize: function () {
                 //this.reports = new BeerCollection();
@@ -20,7 +20,7 @@ define(function (require) {
 
             model: Beer,
 
-            url: "http://localhost/beer/web/app_dev.php/api/beers"
+            url: "http://vps46538.ovh.net/web/app.php/api/beers"
 
         });
 

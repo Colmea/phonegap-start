@@ -7,7 +7,7 @@ define(function (require) {
 
         Manufacturer = Backbone.Model.extend({
 
-            urlRoot: "http://localhost/beer/web/app_dev.php/api/manufacturers",
+            urlRoot: "http://vps46538.ovh.net/web/app.php/api/manufacturers",
 
             initialize: function () {
                 //this.reports = new BeerCollection();
@@ -20,7 +20,7 @@ define(function (require) {
 
             model: Manufacturer,
 
-            url: "http://localhost/beer/web/app_dev.php/api/manufacturers"
+            url: "http://vps46538.ovh.net/web/app.php/api/manufacturers"
 
         });
 

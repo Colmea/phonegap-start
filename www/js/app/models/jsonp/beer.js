@@ -7,7 +7,7 @@ define(function (require) {
 
         Beer = Backbone.Model.extend({
 
-            urlRoot: "hhttp://localhost/beer/web/app_dev.php/api/beername",
+            urlRoot: "http://localhost/beer/web/app_dev.php/api/beername",
 
             initialize: function () {
                
