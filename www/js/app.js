@@ -4,6 +4,10 @@ require.config({
     baseUrl: 'js/lib',
 
     paths: {
+        jquery: "jquery",
+        underscore: "underscore",
+        backbone: "backbone",
+        localstorage: 'backbone.localStorage',
         app: '../app',
         tpl: '../tpl'
     },
@@ -20,7 +24,7 @@ require.config({
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
         },
-        'underscore': {
+         'underscore': {
             exports: '_'
         }
     }
