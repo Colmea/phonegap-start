@@ -31,7 +31,7 @@ body {
 }
 
 .topcoat-icon--menu-search {
-  background: url("../img/search.svg") no-repeat;
+  background: url("../img/search_light.svg") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
