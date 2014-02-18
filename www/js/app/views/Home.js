@@ -23,26 +23,23 @@ define(function (require) {
             this.$el.html(template());
             this.listView = new BeerListView({collection: this.beerList, el: $(".scroller", this.el)});
 
+
             return this;
         },
 
         events: {
-            "keyup .search-key":    "search",
-            "keypress .search-key": "onkeypress"
+            "keypress .search-key": "search"
         },
 
         search: function (event) {
-            var key = $('.search-key').val();
 
-            // fetch only if at least 1 char
-            if (key.length >= 1) {          
-                this.beerList.fetch({reset: true, data: {name: key}});
-            }
-        },
-
-        onkeypress: function (event) {
-            if (event.keyCode === 13) { // enter key pressed
+             if (event.keyCode === 13) { // enter key pressed
                 event.preventDefault();
+
+                $('#loader').show();
+                var key = $('.search-key').val();
+                this.beerList.fetch({reset: true, data: {name: key}});
+
             }
         }
 
