@@ -28,7 +28,14 @@ define(function (require) {
         },
 
         events: {
-            "keypress .search-key": "search"
+            "keypress .search-key": "search",
+            "click #button-search": "displaySearch"
+
+        },
+
+        displaySearch: function (event) {
+            $('.search-bar').show();
+            $('#search-input').focus();
         },
 
         search: function (event) {

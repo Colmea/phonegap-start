@@ -8,16 +8,16 @@
     <div class="topcoat-navigation-bar__item center half" style="margin-left: -40px">
         <h1 class="topcoat-navigation-bar__title">Beer Pursuit</h1>
     </div>
-    <div class="topcoat-navigation-bar__item right quarter">
-        <a class="topcoat-icon-button--quiet">
-          <span class="topcoat-icon topcoat-icon--edit"></span>
-        </a>
-    </div>
+    <div id="button-search" class="topcoat-navigation-bar__item right quarter" style="margin-left: 70px">
+    	<a class="topcoat-icon-button--quiet">
+			<span class="topcoat-icon topcoat-icon--menu-search" style="cursor: pointer; width: 1.3rem; height: 1.3rem"></span>
+		</a>
+	</div>
 </div>
 
 <!-- Search bar -->
-<div class="search-bar">
-    <input type="search" placeholder="Rechercher une bière..." class="topcoat-search-input search-key" style="width:100%;">
+<div class="search-bar" style="display: none">
+    <input id="search-input" type="search" placeholder="Rechercher une bière..." class="topcoat-search-input search-key" style="width:100%;">
 </div>
 
 <div class="topcoat-list__container scroller" style="top:120px;">
