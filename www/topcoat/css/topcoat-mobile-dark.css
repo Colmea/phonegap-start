@@ -30,6 +30,13 @@ body {
   background-size: cover;
 }
 
+.topcoat-icon--menu-search {
+  background: url("../img/search.svg") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
 .quarter {
   width: 25%;
 }
