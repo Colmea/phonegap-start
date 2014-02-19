@@ -22,3 +22,25 @@
 
 <div class="topcoat-list__container scroller" style="top:120px;">
 </div>
+
+ <!-- This initializes the Facebook JS SDK. -->
+  <div id="fb-root"></div>
+  
+  <div id="header">
+    <div id="back-link" onclick="openPage('root')"><div id="back">&lt; Back</div></div>
+    <div id="title">Title</div>
+
+    <div id="right-block">
+      <div class="show_when_not_connected">
+        <a onclick="promptLogin()" class="login-button">
+          <span>Login</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div id="action">
+    <div id="loading-icon"></div>
+  
+    <div id="msg"></div>
+  </div>
