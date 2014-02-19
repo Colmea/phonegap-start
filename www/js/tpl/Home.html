@@ -15,14 +15,6 @@
 	</div>
 </div>
 
-<!-- Search bar -->
-<div class="search-bar" style="display: none">
-    <input id="search-input" type="search" placeholder="Rechercher une bière..." class="topcoat-search-input search-key" style="width:100%;">
-</div>
-
-<div class="topcoat-list__container scroller" style="top:120px;">
-</div>
-
  <!-- This initializes the Facebook JS SDK. -->
   <div id="fb-root"></div>
   
@@ -32,7 +24,7 @@
 
     <div id="right-block">
       <div class="show_when_not_connected">
-        <a onclick="promptLogin()" class="login-button">
+        <a onclick="promptLogin()" class="login-button topcoat-icon-button--quiet">
           <span>Login</span>
         </a>
       </div>
@@ -44,3 +36,12 @@
   
     <div id="msg"></div>
   </div>
+
+<!-- Search bar -->
+<div class="search-bar" style="display: none">
+    <input id="search-input" type="search" placeholder="Rechercher une bière..." class="topcoat-search-input search-key" style="width:100%;">
+</div>
+
+<div class="topcoat-list__container scroller" style="top:120px;">
+</div>
+

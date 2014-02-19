@@ -9,8 +9,7 @@ require.config({
         backbone: "backbone",
         localstorage: 'backbone.localStorage',
         app: '../app',
-        tpl: '../tpl',
-        'facebook': '//connect.facebook.net/en_US/all'
+        tpl: '../tpl'
     },
 
     map: {
@@ -27,14 +26,11 @@ require.config({
         },
          'underscore': {
             exports: '_'
-        },
-        'facebook' : {
-          exports: 'FB'
         }
     }
 });
 
-require(['jquery', 'backbone', 'app/router', 'fb'], function ($, Backbone, Router) {
+require(['jquery', 'backbone', 'app/router'], function ($, Backbone, Router) {
 
     var router = new Router();
 
