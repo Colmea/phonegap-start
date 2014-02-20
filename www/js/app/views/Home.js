@@ -8,6 +8,7 @@ define(function (require) {
         BeerListView    = require('app/views/BeerList'),
         models              = require('app/models/beer'),
         tpl                 = require('text!tpl/Home.html'),
+        FB                  = require('facebook'),
 
         template = _.template(tpl);
 
@@ -29,7 +30,8 @@ define(function (require) {
 
         events: {
             "keypress .search-key": "search",
-            "click #button-search": "displaySearch"
+            "click #button-search": "displaySearch",
+            "click #button-login-facebook": "loginFacebook",
 
         },
 
@@ -48,6 +50,10 @@ define(function (require) {
                 this.beerList.fetch({reset: true, data: {name: key}});
 
             }
+        },
+
+        loginFacebook: function (event) {
+            FB.login();
         }
 
     });

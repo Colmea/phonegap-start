@@ -1,6 +1,5 @@
 define(['facebook'], function(){
 
-	$(document).click( function() {
 		console.log('fb init');
 
 		FB._https = false;
@@ -14,6 +13,5 @@ define(['facebook'], function(){
 		console.log(response);
 		});
 		*/
-	});
  
 });
