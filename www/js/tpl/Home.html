@@ -17,19 +17,17 @@
 
  <!-- This initializes the Facebook JS SDK. -->
   <div id="fb-root"></div>
-  
-  <div id="header">
-    <div id="back-link" onclick="openPage('root')"><div id="back">&lt; Back</div></div>
-    <div id="title">Title</div>
 
-    <div id="right-block">
-      <div class="show_when_not_connected">
-        <a onclick="promptLogin()" class="login-button topcoat-icon-button--quiet">
-          <span>Login</span>
-        </a>
-      </div>
-    </div>
-  </div>
+
+<!--
+  Below we include the Login Button social plugin. This button uses the JavaScript SDK to
+  present a graphical Login button that triggers the FB.login() function when clicked. -->
+
+<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+
+<div style="margin-top: 20%; margin: auto">
+  <a href="javascript:void(0)" id="button-login-facebook" class="btn btn-primary">Connect with Facebook</a>
+</div>
   
   <div id="action">
     <div id="loading-icon"></div>
@@ -44,4 +42,7 @@
 
 <div class="topcoat-list__container scroller" style="top:120px;">
 </div>
+
+<script>
+
 
