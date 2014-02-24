@@ -8,7 +8,6 @@ require.config({
         backbone: "backbone",
         app: '../app',
         tpl: '../tpl',
-        'facebook': '//connect.facebook.net/en_US/all'
 
     },
 
@@ -26,14 +25,11 @@ require.config({
         },
          'underscore': {
             exports: '_'
-        },
-        'facebook' : {
-          exports: 'FB'
         }
     }
 });
 
-require(['jquery', 'backbone', 'app/router', 'fb'], function ($, Backbone, Router, FB) {
+require(['jquery', 'backbone', 'app/router'], function ($, Backbone, Router) {
 
     var router = new Router();
 
@@ -43,4 +39,8 @@ require(['jquery', 'backbone', 'app/router', 'fb'], function ($, Backbone, Route
     });
 
     Backbone.history.start();
+
+    
+    console.log('FB init...');
+    FB.init({ appId: '343327865812997', nativeInterface: CDV.FB, useCachedDialogs: false });
 });
