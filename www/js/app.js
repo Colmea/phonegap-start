@@ -39,8 +39,7 @@ require(['jquery', 'backbone', 'app/router'], function ($, Backbone, Router) {
     });
 
     Backbone.history.start();
-
-    
     console.log('FB init...');
     FB.init({ appId: '343327865812997', nativeInterface: CDV.FB, useCachedDialogs: false });
+    document.getElementById('data').innerHTML = "";
 });

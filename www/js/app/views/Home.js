@@ -52,7 +52,16 @@ define(function (require) {
         },
 
         loginFacebook: function (event) {
-            FB.login();
+            FB.login(
+                function(response) {
+                    if (response.session) {
+                        alert('you are logged in');
+                    } else {
+                        alert('you are not logged in');
+                    }
+                },
+                { scope: "email" }
+            );
         }
 
     });
