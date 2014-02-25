@@ -35,8 +35,7 @@ var app = {
     onDeviceReady: function() {
 
         app.receivedEvent('deviceready');
-        FB.init({ appId: "343327865812997", nativeInterface: CDV.FB, useCachedDialogs: false });
-                                      document.getElementById('data').innerHTML = "";
+       
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

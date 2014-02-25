@@ -8,7 +8,6 @@ define(function (require) {
         BeerListView    = require('app/views/BeerList'),
         models              = require('app/models/beer'),
         tpl                 = require('text!tpl/Home.html'),
-        FB                  = require('facebook'),
 
         template = _.template(tpl);
 
