@@ -18,6 +18,7 @@ define(function (require) {
 
         render: function () {
             console.log('render beer list');
+     
             this.$el.html(template({beers: this.collection.toJSON()}));
 
             $('#loader').hide();

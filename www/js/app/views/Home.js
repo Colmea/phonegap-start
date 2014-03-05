@@ -5,22 +5,30 @@ define(function (require) {
     var $                   = require('jquery'),
         _                   = require('underscore'),
         Backbone            = require('backbone'),
-        BeerListView    = require('app/views/BeerList'),
+        BeerListView        = require('app/views/BeerList'),
         models              = require('app/models/beer'),
         tpl                 = require('text!tpl/Home.html'),
+        Vent                = require('EventBus'),
 
         template = _.template(tpl);
 
 
     return Backbone.View.extend({
 
+
         initialize: function () {
             this.beerList = new models.BeerCollection();
             this.render();
+
+            Vent.on("view:home:render", this.render, this);
+           
         },
 
         render: function () {
-            this.$el.html(template());
+            console.log('render home');
+
+
+           $(this.el).html(template());
             this.listView = new BeerListView({collection: this.beerList, el: $(".scroller", this.el)});
 
 
@@ -35,6 +43,7 @@ define(function (require) {
         },
 
         displaySearch: function (event) {
+            console.log('display search');
             $('.search-bar').show();
             $('#search-input').focus();
         },
@@ -46,7 +55,8 @@ define(function (require) {
 
                 $('#loader').show();
                 var key = $('.search-key').val();
-                this.beerList.fetch({reset: true, data: {name: key}});
+
+                this.beerList.fetch({reset: true, data: {name: key, access_token: token.access_token}});
 
             }
         },
