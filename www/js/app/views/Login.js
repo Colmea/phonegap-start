@@ -37,8 +37,11 @@ define(function (require) {
         login: function (event) {
 
             $('#loader').show();
+            var username = $('#form-login-username').val();
+            var password = $('#form-login-password').val();
 
-            var urlLogin = "http://vps46538.ovh.net/web/oauth/v2/token?client_id=1_3jjeppbcjjeok8owosc4gg4k8gok8sksoos008g4wg4c00g4gs&client_secret=v832znqzp9cgckwcos0w44kgk4okgwwkkws8sckk4ww0gcok4&grant_type=password&username=Colmea&password=Bk339921xWnB";
+            var urlLogin = "http://vps46538.ovh.net/web/oauth/v2/token?client_id=1_3jjeppbcjjeok8owosc4gg4k8gok8sksoos008g4wg4c00g4gs&client_secret=v832znqzp9cgckwcos0w44kgk4okgwwkkws8sckk4ww0gcok4&grant_type=password";
+            urlLogin += '&username=' + username + '&password=' + password;
 
             $.getJSON( urlLogin, function( data )
             {
