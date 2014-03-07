@@ -1,0 +1,16 @@
+<div id="loader" style="position: absolute; display: none; margin-top: 30%; text-align: center; width: 100%">
+	<img src="img/loader.gif" />
+</div>
+
+<ul class="topcoat-list list">
+
+<% _.each(drunkBeers, function(drunk) { %>
+    <li class="topcoat-list__item">
+        <a href="#drunkBeers/<%= drunk.id %>">
+            <p><%= drunk.beer.name %></p>
+            <p style="font-size: 0.8em; color: grey">bue il y a 10 minutes</p>
+            <span class="chevron"></span>
+        </a>
+    </li>
+<% }); %>
+</ul>
