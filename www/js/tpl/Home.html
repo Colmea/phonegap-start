@@ -9,8 +9,8 @@
         <h1 class="topcoat-navigation-bar__title">Beer Pursuit</h1>
     </div>
     <div id="button-search" class="topcoat-navigation-bar__item right quarter" style="margin-left: 70px">
-    	<a class="topcoat-icon-button--quiet">
-			<span class="topcoat-icon topcoat-icon--menu-search" style="cursor: pointer; width: 1.3rem; height: 1.3rem"></span>
+    	<a data-toggle="modal" data-target="#modalNewDrunkBeer">
+			<span class=" glyphicon glyphicon-glass" style="cursor: pointer"></span>
 		</a>
 	</div>
 </div>
@@ -24,9 +24,27 @@
     <input id="search-input" type="search" placeholder="Rechercher une bière..." class="topcoat-search-input search-key" style="width:100%;">
 </div>
 
-<div class="topcoat-list__container scroller" style="top:120px;">
+<h4>Dernières bières bues</h4>
+<div id="container-drunk-beer-list" class="topcoat-list__container">
 </div>
 
-<script>
+<!-- Modal new drunk beer-->
+<div class="modal fade" id="modalNewDrunkBeer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Santé</h4>
+      </div>
+      <div class="modal-body">
+        Disponible très bientôt.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary disabled">Boire la bière</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 

@@ -5,8 +5,8 @@ define(function (require) {
     var $                   = require('jquery'),
         _                   = require('underscore'),
         Backbone            = require('backbone'),
-        BeerListView        = require('app/views/BeerList'),
-        models              = require('app/models/beer'),
+        DrunkBeerListView        = require('app/views/DrunkBeerList'),
+        models              = require('app/models/drunkBeer'),
         tpl                 = require('text!tpl/Home.html'),
         Vent                = require('EventBus'),
 
@@ -17,9 +17,10 @@ define(function (require) {
 
 
         initialize: function () {
-            this.beerList = new models.BeerCollection();
+            this.drunkBeerList = new models.DrunkBeerCollection();
             this.render();
 
+            // Init event handler 'render'
             Vent.on("view:home:render", this.render, this);
            
         },
@@ -27,51 +28,21 @@ define(function (require) {
         render: function () {
             console.log('render home');
 
+            if (window.token != undefined) {
+                // Fetch drunk beers
+                $('#loader').show();
+                this.drunkBeerList.fetch({reset: true, data: {access_token: token.access_token}});
+            }
 
-           $(this.el).html(template());
-            this.listView = new BeerListView({collection: this.beerList, el: $(".scroller", this.el)});
-
+            $(this.el).html(template());
+            this.listView = new DrunkBeerListView({collection: this.drunkBeerList, el: $("#container-drunk-beer-list", this.el)});
 
             return this;
         },
 
         events: {
-            "keypress .search-key": "search",
-            "click #button-search": "displaySearch",
-            "click #button-login-facebook": "loginFacebook",
+           
 
-        },
-
-        displaySearch: function (event) {
-            console.log('display search');
-            $('.search-bar').show();
-            $('#search-input').focus();
-        },
-
-        search: function (event) {
-
-             if (event.keyCode === 13) { // enter key pressed
-                event.preventDefault();
-
-                $('#loader').show();
-                var key = $('.search-key').val();
-
-                this.beerList.fetch({reset: true, data: {name: key, access_token: token.access_token}});
-
-            }
-        },
-
-        loginFacebook: function (event) {
-            FB.login(
-                function(response) {
-                    if (response.session) {
-                        alert('you are logged in');
-                    } else {
-                        alert('you are not logged in');
-                    }
-                },
-                { scope: "email" }
-            );
         }
 
     });
