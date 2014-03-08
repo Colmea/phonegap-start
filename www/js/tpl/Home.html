@@ -8,11 +8,14 @@
     <div class="topcoat-navigation-bar__item center half" style="margin-left: -40px">
         <h1 class="topcoat-navigation-bar__title">Beer Pursuit</h1>
     </div>
+
+    <a id="button-new-drink">
     <div id="button-search" class="topcoat-navigation-bar__item right quarter" style="margin-left: 70px">
-    	<a data-toggle="modal" data-target="#modalNewDrunkBeer">
+    	
 			<span class=" glyphicon glyphicon-glass" style="cursor: pointer"></span>
-		</a>
+		
 	</div>
+    </a>
 </div>
 
  <!-- This initializes the Facebook JS SDK. -->
@@ -39,12 +42,14 @@
       <div class="modal-body">
         Ajoutez une bière à votre liste en scannant sont étiquette ou en la recherchant manuellement.
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default disabled" data-dismiss="modal">
+      <div class="modal-footer" style="text-align: center">
+        <!--
+        <button type="button" class="btn btn-lg btn-default disabled" data-dismiss="modal" style="margin-bottom: 4px">
             <span class="glyphicon glyphicon-search"></span>
             &nbsp;Rechercher manuellement
         </button>
-        <button id="button-scan" type="button" class="btn btn-primary">
+        -->
+        <button id="button-scan" type="button" class="btn btn-lg btn-primary">
             <span class="glyphicon glyphicon-camera"></span>
             &nbsp;Scanner le code barre
         </button>

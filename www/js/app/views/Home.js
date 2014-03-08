@@ -37,24 +37,38 @@ define(function (require) {
             $(this.el).html(template());
             this.listView = new DrunkBeerListView({collection: this.drunkBeerList, el: $("#container-drunk-beer-list", this.el)});
 
+            //Move modal new drunk beer at the end of body
+            //$('#modalNewDrunkBeer').appendTo("body");
+
             return this;
         },
 
         events: {
            "click #button-scan": "scan",
+           "click #button-new-drink": "drinkBeer"
+        },
+
+        drinkBeer: function(event) {
+            $("#modalNewDrunkBeer").modal({
+                backdrop: false
+            });
+            
+            $("#modalNewDrunkBeer").modal("show");
+            $("#modalNewDrunkBeer").css("z-index", "1500");
         },
 
         scan: function(event) {
 
+            console.log('scan barecode');
             cordova.plugins.barcodeScanner.scan(
               function (result) {
-                  alert("We got a barcode\n" +
-                        "Result: " + result.text + "\n" +
+                  alert("Code barre reconnu\n" +
+                        "Résultat: " + result.text + "\n" +
                         "Format: " + result.format + "\n" +
-                        "Cancelled: " + result.cancelled);
+                        "Annulé: " + result.cancelled);
               }, 
               function (error) {
-                  alert("Scanning failed: " + error);
+                  alert("Erreur lors du scan: " + error);
               }
            );
         }
