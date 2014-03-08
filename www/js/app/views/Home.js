@@ -61,7 +61,8 @@ define(function (require) {
         scan: function(event) {
 
             console.log('scan barecode');
-            cordova.plugins.barcodeScanner.scan(
+            console.debug(window.plugins);
+            window.plugins.barcodeScanner.scan(
               function (result) {
                   alert("Code barre reconnu\n" +
                         "Résultat: " + result.text + "\n" +
