@@ -42,7 +42,7 @@ define(function (require) {
 
         events: {
            "click #button-scan": "scan",
-        }
+        },
 
         scan: function(event) {
 
