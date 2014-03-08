@@ -61,11 +61,10 @@ define(function (require) {
         scan: function(event) {
 
             console.log('scand barecode');
-            console.log(cordova);
-            console.log(cordova.plugins);
-            console.log('cordova finit');
-            
-            cordova.plugins.barcodeScanner.scan(
+
+            var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+
+            scanner.scan(
               function (result) {
                   alert("Code barre reconnu\n" +
                         "Résultat: " + result.text + "\n" +
