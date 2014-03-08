@@ -2,11 +2,11 @@
 	<img src="img/loader.gif" />
 </div>
 
-<ul class="topcoat-list list">
+<ul class="list-group">
 
 <% _.each(drunkBeers, function(drunk) { %>
-    <li class="topcoat-list__item">
-        <a href="#drunkBeers/<%= drunk.id %>">
+    <li class="list-group-item">
+        <a href="#beers/<%= drunk.beer.id %>">
             <p><%= drunk.beer.name %></p>
             <p style="font-size: 0.8em; color: grey">bue il y a 10 minutes</p>
             <span class="chevron"></span>

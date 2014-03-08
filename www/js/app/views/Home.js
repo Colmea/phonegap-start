@@ -50,7 +50,8 @@ define(function (require) {
 
         drinkBeer: function(event) {
             $("#modalNewDrunkBeer").modal({
-                backdrop: false
+                backdrop: false,
+                keyboard: true
             });
             
             $("#modalNewDrunkBeer").modal("show");
