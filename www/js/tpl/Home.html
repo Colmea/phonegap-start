@@ -1,25 +1,51 @@
 <!-- Header -->
-<div class="topcoat-navigation-bar">
-    <div class="topcoat-navigation-bar__item left quarter" style="margin-left: -40px">
-        <a class="topcoat-icon-button--quiet">
-          <span class="topcoat-icon topcoat-icon--menu-stack"></span>
-        </a>
-    </div>
-    <div class="topcoat-navigation-bar__item center half" style="margin-left: -40px">
-        <h1 class="topcoat-navigation-bar__title">Beer Pursuit</h1>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <!-- Menu left -->
+        <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="margin-left: -15px">
+            <span class="sr-only">Menu</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <!-- Button new drink -->
+        <button id="button-new-drink" class="pull-right navbar-btn btn btn-primary" style="margin-right: 15px">
+          <span class="glyphicon glyphicon-glass" style="cursor: pointer"></span>
+        </button>
+
+        <div class="navbar-brand">Beer Pursuit</div>
     </div>
 
-    <a id="button-new-drink">
-    <div id="button-search" class="topcoat-navigation-bar__item right quarter" style="margin-left: 70px">
-    	
-			<span class=" glyphicon glyphicon-glass" style="cursor: pointer"></span>
-		
-	</div>
-    </a>
-</div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+              <input type="text" class="form-control">
+            </div><!-- /input-group -->
+          </div>
+          <button type="submit" class="btn btn-default">
+              <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </form>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Mes bières</a></li>
+        <li><a href="#">Succès</a></li>
+        <li><a href="#">Amis</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
- <!-- This initializes the Facebook JS SDK. -->
-  <div id="fb-root"></div>
+<!-- This initializes the Facebook JS SDK. -->
+<div id="fb-root"></div>
 
 
 <!-- Search bar -->
@@ -27,10 +53,7 @@
     <input id="search-input" type="search" placeholder="Rechercher une bière..." class="topcoat-search-input search-key" style="width:100%;">
 </div>
 
-<div style="margin: 10px; font-size: 1.2em; color: grey">
-    Bières bues récemment
-</div>
-<div id="container-drunk-beer-list" class="topcoat-list__container" style="margin: 5px">
+<div id="container-content" class="topcoat-list__container" style="margin: 5px">
 </div>
 
 <!-- Modal new drunk beer-->
@@ -45,12 +68,12 @@
         Ajoutez une bière à votre liste en scannant sont étiquette ou en la recherchant manuellement.
       </div>
       <div class="modal-footer" style="text-align: center">
-        <!--
+          <!-- Button search beer -->
         <button type="button" class="btn btn-lg btn-default disabled" data-dismiss="modal" style="margin-bottom: 4px">
             <span class="glyphicon glyphicon-search"></span>
             &nbsp;Rechercher manuellement
         </button>
-        -->
+        <!-- Button scan -->
         <button id="button-scan" type="button" class="btn btn-lg btn-primary">
             <span class="glyphicon glyphicon-camera"></span>
             &nbsp;Scanner le code barre
