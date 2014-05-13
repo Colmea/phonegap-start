@@ -22,7 +22,7 @@ define(function (require) {
 
             // Init event handler 'render'
             Vent.on("view:home:render", this.render, this);
-           
+
         },
 
         render: function () {
@@ -35,7 +35,7 @@ define(function (require) {
             }
 
             $(this.el).html(template());
-            this.listView = new DrunkBeerListView({collection: this.drunkBeerList, el: $("#container-drunk-beer-list", this.el)});
+            this.listView = new DrunkBeerListView({collection: this.drunkBeerList, el: $("#container-content", this.el)});
 
             //Move modal new drunk beer at the end of body
             //$('#modalNewDrunkBeer').appendTo("body");
@@ -53,7 +53,7 @@ define(function (require) {
                 backdrop: false,
                 keyboard: true
             });
-            
+
             $("#modalNewDrunkBeer").modal("show");
             $("#modalNewDrunkBeer").css("z-index", "1500");
         },
@@ -70,7 +70,7 @@ define(function (require) {
                         "Résultat: " + result.text + "\n" +
                         "Format: " + result.format + "\n" +
                         "Annulé: " + result.cancelled);
-              }, 
+              },
               function (error) {
                   alert("Erreur lors du scan: " + error);
               }
