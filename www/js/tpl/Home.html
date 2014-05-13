@@ -47,12 +47,6 @@
 <!-- This initializes the Facebook JS SDK. -->
 <div id="fb-root"></div>
 
-
-<!-- Search bar -->
-<div class="search-bar" style="display: none">
-    <input id="search-input" type="search" placeholder="Rechercher une bière..." class="topcoat-search-input search-key" style="width:100%;">
-</div>
-
 <div id="container-content" class="topcoat-list__container" style="margin: 5px">
 </div>
 
@@ -62,14 +56,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Santé</h4>
+        <h4 class="modal-title" id="myModalLabel">Santé !</h4>
       </div>
       <div class="modal-body">
         Ajoutez une bière à votre liste en scannant sont étiquette ou en la recherchant manuellement.
       </div>
+
       <div class="modal-footer" style="text-align: center">
           <!-- Button search beer -->
-        <button type="button" class="btn btn-lg btn-default disabled" data-dismiss="modal" style="margin-bottom: 4px">
+        <button id="page-drink-beer" type="button" class="btn btn-lg btn-default" style="margin-bottom: 4px">
             <span class="glyphicon glyphicon-search"></span>
             &nbsp;Rechercher manuellement
         </button>

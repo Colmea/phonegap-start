@@ -1,16 +1,11 @@
-<div id="loader" style="position: absolute; display: none; margin-top: 30%; text-align: center; width: 100%">
-	<img src="img/loader.gif" />
-</div>
-
-<ul class="topcoat-list list">
-
+<ul class="list-group">
 <% _.each(beers, function(beer) { %>
-    <li class="topcoat-list__item">
-        <a href="#beers/<%= beer.id %>">
-            <p><%= beer.name %></p>
-            <p><%= beer.degree %>°</p>
-            <span class="chevron"></span><span class="count">2</span>
-        </a>
-    </li>
+
+	<li class="list-group-item">
+		<a href="#beers/<%= beer.id %>">
+			<p><%= beers.beer.name %></p>
+		</a>
+	</li>
+
 <% }); %>
 </ul>

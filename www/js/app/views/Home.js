@@ -5,8 +5,10 @@ define(function (require) {
     var $                   = require('jquery'),
         _                   = require('underscore'),
         Backbone            = require('backbone'),
-        DrunkBeerListView        = require('app/views/DrunkBeerList'),
+        DrunkBeerListView   = require('app/views/DrunkBeerList'),
+        SelectBeerListView  = require('app/views/SelectDrinkBeer'),
         models              = require('app/models/drunkBeer'),
+        beerModels          = require('app/models/beer'),
         tpl                 = require('text!tpl/Home.html'),
         Vent                = require('EventBus'),
 
@@ -18,6 +20,8 @@ define(function (require) {
 
         initialize: function () {
             this.drunkBeerList = new models.DrunkBeerCollection();
+            this.selectDrinkBeerList  = new beerModels.BeerCollection();
+
             this.render();
 
             // Init event handler 'render'
@@ -45,7 +49,8 @@ define(function (require) {
 
         events: {
            "click #button-scan": "scan",
-           "click #button-new-drink": "drinkBeer"
+           "click #button-new-drink": "drinkBeer",
+           "click #page-drink-beer": "pageSelectDrinkBeer"
         },
 
         drinkBeer: function(event) {
@@ -54,8 +59,16 @@ define(function (require) {
                 keyboard: true
             });
 
+
             $("#modalNewDrunkBeer").modal("show");
             $("#modalNewDrunkBeer").css("z-index", "1500");
+        },
+
+        pageSelectDrinkBeer: function(event) {
+            $("#modalNewDrunkBeer").modal("hide");
+
+            $(this.el).html(template());
+            this.listView = new SelectBeerListView({collection: this.selectDrinkBeerList, el: $("#container-content", this.el)});
         },
 
         scan: function(event) {
