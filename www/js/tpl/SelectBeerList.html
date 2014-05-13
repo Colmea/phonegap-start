@@ -1,0 +1,17 @@
+<!-- Search bar -->
+<div class="search-bar">
+    <input id="search-input" type="search" placeholder="Rechercher une bière..." class="topcoat-search-input search-key" style="width:100%;">
+</div>
+
+<ul class="list-group">
+
+<% _.each(beers, function(beer) { %>
+
+	<li class="list-group-item">
+		<a class="selectBeer" data-beer="<%= beer.id %>">
+			<p><%= beer.name %></p>
+		</a>
+	</li>
+
+<% }); %>
+</ul>
