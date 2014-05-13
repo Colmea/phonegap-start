@@ -24,6 +24,7 @@ require.config({
 
     shim: {
         'bootstrap': {
+            deps: ['jquery'],
             exports: 'bootstrap'
         },
         'backbone': {
